@@ -21,18 +21,18 @@ const CONFIG = {
     // Customize each question and its possible responses
     questions: {
         first: {
-            text: "Te gusto?",                                    // First interaction
+            text: "Yamille, te gusto?",                                    // First interaction
             yesBtn: "Chi",                                             // Text for "Yes" button
             noBtn: "Ño",                                               // Text for "No" button
             secretAnswer: "No me gustas, te amo! ❤️"           // Secret hover message
         },
         second: {
-            text: "Cuanto me amas?",                          // For the love meter
+            text: "Mille, cuanto me amas?",                          // For the love meter
             startText: "Asi de mucho!",                                   // Text before the percentage
             nextBtn: "Siguiente ❤️"                                         // Text for the next button
         },
         third: {
-            text: "Serias mi San Valentin este 15 de febrero, 2026? 🌹", // The big question!
+            text: "Miye,Serias mi San Valentin este 15 de febrero, 2026? 🌹", // The big question!
             yesBtn: "Si!",                                             // Text for "Yes" button
             noBtn: "No"                                                 // Text for "No" button
         }
