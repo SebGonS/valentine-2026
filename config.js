@@ -43,7 +43,7 @@ const CONFIG = {
     loveMessages: {
         extreme: "WOWOWOWOWOW tanto me amas?? 🥰🚀💝",  // Shows when they go past 5000%
         high: "Al infinito y mas allá! 🚀💝",              // Shows when they go past 1000%
-        normal: "Y un poco mas allá! 🥰"                           // Shows when they go past 100%
+        normal: "Un poco mas allá! 🥰"                           // Shows when they go past 100%
     },
 
     // Messages that appear after they say "Yes!"
