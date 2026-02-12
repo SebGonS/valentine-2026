@@ -8,7 +8,7 @@ const CONFIG = {
 
     // Photo that appears next to the title (circular, next to the name)
     // Upload to Cloudinary and paste the URL here. Leave empty "" to hide.
-    headerPhoto: "",
+    headerPhoto: "https://res.cloudinary.com/dvyf0lct6/image/upload/v1770857884/oioiamie_gr1sag.jpg",
 
     // The title that appears in the browser tab
     // You can use emojis! 💝 💖 💗 💓 💞 💕
@@ -32,6 +32,11 @@ const CONFIG = {
         "https://res.cloudinary.com/dvyf0lct6/image/upload/v1770856768/minobia2_q4hjpm.jpg",
         "https://res.cloudinary.com/dvyf0lct6/image/upload/v1770856768/eminioieiamie_hkzutn.jpg",
         "https://res.cloudinary.com/dvyf0lct6/image/upload/v1770857462/WhatsApp_Image_2026-02-11_at_7.36.08_PM_xpuckk.jpg",
+        "https://res.cloudinary.com/dvyf0lct6/image/upload/v1770857885/poseMiye_imazxw.jpg",
+        "https://res.cloudinary.com/dvyf0lct6/image/upload/v1770857884/poseMiyeEmini_lxj6jr.jpg",
+        "https://res.cloudinary.com/dvyf0lct6/image/upload/v1770857883/ratoncita_czvwyz.jpg",
+        "https://res.cloudinary.com/dvyf0lct6/image/upload/v1770857884/us_wz7cyx.jpg",
+        "https://res.cloudinary.com/dvyf0lct6/image/upload/v1770857884/us1_czjqhz.jpg"
 
 
 
@@ -69,13 +74,17 @@ const CONFIG = {
 
     // Messages that appear after they say "Yes!"
     celebration: {
-        title: "Que alegría! Soy el mas feliz del mundo! 🎉💝💖💝💓",
-        message: "Ahora para tu regala, un abrazote y un besote!",
-        emojis: "🎁💖🤗💝💋❤️💕",  // These will bounce around
+        title: "Que alegría! Soy el mas hombre feliz del mundo! 🎉💝💖💝💓",
+        message: "Ahora para tu regalo, un abrazote y un besote! y mas sorpresas el sabadote",
+        emojis: "🎁💖🤗💝❤️💕",  // These will bounce around
+
+        // Featured image — a big photo shown in the celebration screen
+        // Leave empty "" to hide
+        image: "https://res.cloudinary.com/dvyf0lct6/image/upload/v1770859056/minions_rgwba4.jpg",
 
         // Love letter — displayed in a handwritten-style card after celebration
         // Leave empty "" to hide
-        loveLetter: "",
+        loveLetter: "Yamille, Mille, Miye, Mie, OieIamie, pulpito, sapito, suricatita, popin,kokin, mi amor, estos ya prontos a ser 6 mesesotes junto a ti han sido de lo mejor. Estoy muy agradecido con la vida por haberte conocido, conocerte como te conozco, y por todo lo que hemos compartido. Me encanta como siempre me haces reir y tratas de animarme cuando estoy serio o reniego y sobretodo como podemos tener conversaciones serias y hasta incómodas sin problema. Contigo el tiempo se me pasa volando y no podría haber pedido mejor copiloto que me diga que tenía que voltear en la esquina que acabo de pasar. Quiero que sepas que cuentas conmigo para todo y siempre estaré ahí para apoyarte y conversar de lo que sea.  Te adoro Preciosa, estoy muy feliz de pasar este 14 contigo",
 
         // Photo gallery — shown after celebration message
         // Add your photos as objects with url and optional caption
@@ -86,9 +95,10 @@ const CONFIG = {
             { url: "https://res.cloudinary.com/dvyf0lct6/image/upload/v1770856769/halloween_zqd1og.jpg", caption: "Uno de los dates mas bonitos" },
             { url: "https://res.cloudinary.com/dvyf0lct6/image/upload/v1770856769/minobia_xten1y.jpg", caption: "Minobia oficialmente" },
             { url: "https://res.cloudinary.com/dvyf0lct6/image/upload/v1770856768/minobia2_q4hjpm.jpg", caption: "Minobia oficialmente pt2" },
-            { url: "https://res.cloudinary.com/dvyf0lct6/image/upload/v1770856768/zzzzz_jjiawh.jpg", caption: "ZZZZZZZ" },
+            { url: "https://res.cloudinary.com/dvyf0lct6/image/upload/v1770856768/zzzzz_jjiawh.jpg", caption: "😴💤" },
             { url: "https://res.cloudinary.com/dvyf0lct6/image/upload/v1770856768/a_dgoihs.jpg", caption: "Rica comida" },
-
+{ url: "https://res.cloudinary.com/dvyf0lct6/image/upload/v1770857888/teamo_rd2ckr.jpg", caption: "La primera vez que nos dijimos te amo" },
+{ url: "https://res.cloudinary.com/dvyf0lct6/image/upload/v1770857853/sweet7_nqiwel.jpg", caption: "No salio Livia en la foto:(" },
         ]
     },
 

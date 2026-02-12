@@ -204,6 +204,13 @@ function celebrate() {
     document.getElementById('celebrationMessage').textContent = config.celebration.message;
     document.getElementById('celebrationEmojis').textContent = config.celebration.emojis;
 
+    // Show celebration image if configured
+    if (config.celebration.image) {
+        const celebImg = document.getElementById('celebrationImage');
+        celebImg.src = config.celebration.image;
+        celebImg.classList.remove('hidden');
+    }
+
     // Show love letter if configured
     if (config.celebration.loveLetter) {
         const loveLetter = document.getElementById('loveLetter');
