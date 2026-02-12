@@ -114,19 +114,36 @@ function createFloatingElements() {
         container.appendChild(div);
     });
 
-    // Create floating images (pick 8 random ones to keep it clean)
+    // Create floating images (cycle through all photos, max 5 visible at a time)
     if (config.floatingImages && config.floatingImages.length > 0) {
-        const shuffled = [...config.floatingImages].sort(() => 0.5 - Math.random());
-        const selected = shuffled.slice(0, 8);
-        selected.forEach(src => {
-            const img = document.createElement('img');
-            img.className = 'floating-image';
-            img.src = src;
-            img.alt = '';
-            setRandomPosition(img);
-            container.appendChild(img);
-        });
+        const visible = Math.min(5, config.floatingImages.length);
+        for (let i = 0; i < visible; i++) {
+            spawnFloatingImage(container, i * 4); // stagger initial batch by 4s each
+        }
     }
+}
+
+// Floating image cycling — picks a random photo, floats it up, then swaps it when done
+let _floatingImageIndex = 0;
+function spawnFloatingImage(container, delay) {
+    const images = config.floatingImages;
+    const src = images[_floatingImageIndex % images.length];
+    _floatingImageIndex++;
+
+    const img = document.createElement('img');
+    img.className = 'floating-image';
+    img.src = src;
+    img.alt = '';
+    img.style.left = (Math.random() * 85 + 5) + 'vw';
+    img.style.animationDuration = 18 + Math.random() * 10 + 's';
+    if (delay) img.style.animationDelay = delay + 's';
+
+    img.addEventListener('animationend', () => {
+        img.remove();
+        spawnFloatingImage(container, 0);
+    });
+
+    container.appendChild(img);
 }
 
 // Set random position for floating elements

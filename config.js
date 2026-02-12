@@ -61,7 +61,7 @@ const CONFIG = {
             nextBtn: "Siguiente ❤️"                                         // Text for the next button
         },
         third: {
-            text: "Serias mi San Valentin este 15 de febrero, 2026? 🌹", // The big question!
+            text: "Serias mi San Valentin este 14 de febrero, 2026? 🌹", // The big question!
             yesBtn: "Si!",                                             // Text for "Yes" button
             noBtn: "No"                                                 // Text for "No" button
         }
