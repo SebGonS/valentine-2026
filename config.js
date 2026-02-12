@@ -6,6 +6,10 @@ const CONFIG = {
 
     valentineName: "Miye",
 
+    // Photo that appears next to the title (circular, next to the name)
+    // Upload to Cloudinary and paste the URL here. Leave empty "" to hide.
+    headerPhoto: "",
+
     // The title that appears in the browser tab
     // You can use emojis! 💝 💖 💗 💓 💞 💕
     pageTitle: "Serias mi San Valentin? 💝",
@@ -17,22 +21,39 @@ const CONFIG = {
         bears: ['🧸', '🐻']                       // Cute bear emojis
     },
 
+    // Floating photos in the background (circular, float alongside emojis)
+    // Add paths to your photos here — they'll appear as small floating circles
+    floatingImages: [
+        "https://res.cloudinary.com/dvyf0lct6/image/upload/v1770856769/huelecaja_soba1f.jpg",
+        "https://res.cloudinary.com/dvyf0lct6/image/upload/v1770856769/halloween_zqd1og.jpg",
+        "https://res.cloudinary.com/dvyf0lct6/image/upload/v1770856768/zzzzz_jjiawh.jpg",
+        "https://res.cloudinary.com/dvyf0lct6/image/upload/v1770856768/a_dgoihs.jpg",
+        "https://res.cloudinary.com/dvyf0lct6/image/upload/v1770856769/minobia_xten1y.jpg",
+        "https://res.cloudinary.com/dvyf0lct6/image/upload/v1770856768/minobia2_q4hjpm.jpg",
+        "https://res.cloudinary.com/dvyf0lct6/image/upload/v1770856768/eminioieiamie_hkzutn.jpg",
+        "https://res.cloudinary.com/dvyf0lct6/image/upload/v1770857462/WhatsApp_Image_2026-02-11_at_7.36.08_PM_xpuckk.jpg",
+
+
+
+        // "images/us2.jpg",
+    ],
+
     // Questions and answers
     // Customize each question and its possible responses
     questions: {
         first: {
-            text: "Yamille, te gusto?",                                    // First interaction
+            text: "Te gusto?",                                    // First interaction
             yesBtn: "Chi",                                             // Text for "Yes" button
             noBtn: "Ño",                                               // Text for "No" button
             secretAnswer: "No me gustas, te amo! ❤️"           // Secret hover message
         },
         second: {
-            text: "Mille, cuanto me amas?",                          // For the love meter
+            text: "Cuanto me amas?",                          // For the love meter
             startText: "Asi de mucho!",                                   // Text before the percentage
             nextBtn: "Siguiente ❤️"                                         // Text for the next button
         },
         third: {
-            text: "Miye,Serias mi San Valentin este 15 de febrero, 2026? 🌹", // The big question!
+            text: "Serias mi San Valentin este 15 de febrero, 2026? 🌹", // The big question!
             yesBtn: "Si!",                                             // Text for "Yes" button
             noBtn: "No"                                                 // Text for "No" button
         }
@@ -43,14 +64,43 @@ const CONFIG = {
     loveMessages: {
         extreme: "WOWOWOWOWOW tanto me amas?? 🥰🚀💝",  // Shows when they go past 5000%
         high: "Al infinito y mas allá! 🚀💝",              // Shows when they go past 1000%
-        normal: "Un poco mas allá! 🥰"                           // Shows when they go past 100%
+        normal: "OIEIAMIE Un poco mas allá! 🥰"                           // Shows when they go past 100%
     },
 
     // Messages that appear after they say "Yes!"
     celebration: {
         title: "Que alegría! Soy el mas feliz del mundo! 🎉💝💖💝💓",
         message: "Ahora para tu regala, un abrazote y un besote!",
-        emojis: "🎁💖🤗💝💋❤️💕"  // These will bounce around
+        emojis: "🎁💖🤗💝💋❤️💕",  // These will bounce around
+
+        // Love letter — displayed in a handwritten-style card after celebration
+        // Leave empty "" to hide
+        loveLetter: "",
+
+        // Photo gallery — shown after celebration message
+        // Add your photos as objects with url and optional caption
+        photos: [
+            { url: "https://res.cloudinary.com/dvyf0lct6/image/upload/v1770856769/huelecaja_soba1f.jpg", caption: "Oliendo la caja en uno de los primeros dates" },
+            { url: "https://res.cloudinary.com/dvyf0lct6/image/upload/v1770856770/likeoneofyourfrenchgirls_iwxz3h.jpg", caption: "En la playa" },
+            { url: "https://res.cloudinary.com/dvyf0lct6/image/upload/v1770856769/control_v8vije.jpg", caption: "El outfit combinaba hasta las medias, date 10/10" },
+            { url: "https://res.cloudinary.com/dvyf0lct6/image/upload/v1770856769/halloween_zqd1og.jpg", caption: "Uno de los dates mas bonitos" },
+            { url: "https://res.cloudinary.com/dvyf0lct6/image/upload/v1770856769/minobia_xten1y.jpg", caption: "Minobia oficialmente" },
+            { url: "https://res.cloudinary.com/dvyf0lct6/image/upload/v1770856768/minobia2_q4hjpm.jpg", caption: "Minobia oficialmente pt2" },
+            { url: "https://res.cloudinary.com/dvyf0lct6/image/upload/v1770856768/zzzzz_jjiawh.jpg", caption: "ZZZZZZZ" },
+            { url: "https://res.cloudinary.com/dvyf0lct6/image/upload/v1770856768/a_dgoihs.jpg", caption: "Rica comida" },
+
+        ]
+    },
+
+    // Relationship timeline — shown in the celebration screen
+    // A visual timeline of your milestones together
+    timeline: {
+        enabled: false,  // Set to true to show the timeline
+        milestones: [
+            // { date: "2024-01-15", title: "Nos conocimos", description: "El dia que todo cambio" },
+            // { date: "2024-03-20", title: "Primera cita", description: "Fuimos al parque" },
+            // { date: "2025-02-14", title: "San Valentin", description: "Nuestro primer San Valentin juntos" },
+        ]
     },
 
     // Color scheme for the website

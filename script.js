@@ -59,7 +59,15 @@ window.addEventListener('DOMContentLoaded', () => {
     validateConfig();
 
     // Set texts from config
-    document.getElementById('valentineTitle').textContent = `${config.valentineName}, my amor...`;
+    document.getElementById('valentineTitle').textContent = `${config.valentineName}, mi amor...`;
+
+    // Show header photo if configured
+    if (config.headerPhoto) {
+        const headerPhoto = document.getElementById('headerPhoto');
+        headerPhoto.src = config.headerPhoto;
+        headerPhoto.alt = config.valentineName;
+        headerPhoto.classList.remove('hidden');
+    }
     
     // Set first question texts
     document.getElementById('question1Text').textContent = config.questions.first.text;
@@ -84,10 +92,10 @@ window.addEventListener('DOMContentLoaded', () => {
     setupMusicPlayer();
 });
 
-// Create floating hearts and bears
+// Create floating hearts, bears, and images
 function createFloatingElements() {
     const container = document.querySelector('.floating-elements');
-    
+
     // Create hearts
     config.floatingEmojis.hearts.forEach(heart => {
         const div = document.createElement('div');
@@ -105,6 +113,18 @@ function createFloatingElements() {
         setRandomPosition(div);
         container.appendChild(div);
     });
+
+    // Create floating images
+    if (config.floatingImages && config.floatingImages.length > 0) {
+        config.floatingImages.forEach(src => {
+            const img = document.createElement('img');
+            img.className = 'floating-image';
+            img.src = src;
+            img.alt = '';
+            setRandomPosition(img);
+            container.appendChild(img);
+        });
+    }
 }
 
 // Set random position for floating elements
@@ -178,12 +198,80 @@ function celebrate() {
     document.querySelectorAll('.question-section').forEach(q => q.classList.add('hidden'));
     const celebration = document.getElementById('celebration');
     celebration.classList.remove('hidden');
-    
+
     // Set celebration messages
     document.getElementById('celebrationTitle').textContent = config.celebration.title;
     document.getElementById('celebrationMessage').textContent = config.celebration.message;
     document.getElementById('celebrationEmojis').textContent = config.celebration.emojis;
-    
+
+    // Show love letter if configured
+    if (config.celebration.loveLetter) {
+        const loveLetter = document.getElementById('loveLetter');
+        document.getElementById('loveLetterText').textContent = config.celebration.loveLetter;
+        loveLetter.classList.remove('hidden');
+    }
+
+    // Show photo gallery if configured
+    if (config.celebration.photos && config.celebration.photos.length > 0) {
+        const gallery = document.getElementById('photoGallery');
+        config.celebration.photos.forEach(photo => {
+            const item = document.createElement('div');
+            item.className = 'photo-item';
+
+            const img = document.createElement('img');
+            img.src = photo.url;
+            img.alt = photo.caption || '';
+            item.appendChild(img);
+
+            if (photo.caption) {
+                const caption = document.createElement('div');
+                caption.className = 'photo-caption';
+                caption.textContent = photo.caption;
+                item.appendChild(caption);
+            }
+
+            gallery.appendChild(item);
+        });
+        gallery.classList.remove('hidden');
+    }
+
+    // Show timeline if configured
+    if (config.timeline && config.timeline.enabled && config.timeline.milestones && config.timeline.milestones.length > 0) {
+        const timelineEl = document.getElementById('timeline');
+        const milestonesEl = document.getElementById('timelineMilestones');
+
+        config.timeline.milestones.forEach(milestone => {
+            const item = document.createElement('div');
+            item.className = 'timeline-item';
+
+            const dot = document.createElement('div');
+            dot.className = 'timeline-dot';
+            item.appendChild(dot);
+
+            if (milestone.date) {
+                const date = document.createElement('div');
+                date.className = 'timeline-date';
+                date.textContent = milestone.date;
+                item.appendChild(date);
+            }
+
+            const title = document.createElement('div');
+            title.className = 'timeline-title';
+            title.textContent = milestone.title;
+            item.appendChild(title);
+
+            if (milestone.description) {
+                const desc = document.createElement('div');
+                desc.className = 'timeline-description';
+                desc.textContent = milestone.description;
+                item.appendChild(desc);
+            }
+
+            milestonesEl.appendChild(item);
+        });
+        timelineEl.classList.remove('hidden');
+    }
+
     // Create heart explosion effect
     createHeartExplosion();
 }
@@ -222,9 +310,18 @@ function setupMusicPlayer() {
     if (config.music.autoplay) {
         const playPromise = bgMusic.play();
         if (playPromise !== undefined) {
-            playPromise.catch(error => {
-                console.log("Autoplay prevented by browser");
+            playPromise.then(() => {
+                musicToggle.textContent = config.music.stopText;
+            }).catch(() => {
+                // Browser blocked autoplay — start music on first user click
                 musicToggle.textContent = config.music.startText;
+                const startOnClick = () => {
+                    bgMusic.play();
+                    musicToggle.textContent = config.music.stopText;
+                    document.removeEventListener('click', startOnClick);
+                };
+                document.removeEventListener('click', startOnClick);
+                document.addEventListener('click', startOnClick);
             });
         }
     }

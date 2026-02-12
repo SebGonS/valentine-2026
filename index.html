@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- CUSTOMIZE: Browser tab title -->
-    <title>Will You Be My Valentine? 💝</title>
+    <title>Serias mi San Valentin? 💝</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>❤️</text></svg>">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <!-- Styles -->
@@ -18,11 +19,14 @@
 
     <!-- Main Content Container -->
     <div class="container">
-        <h1 id="valentineTitle"></h1>
+        <div class="header-with-photo">
+            <img id="headerPhoto" class="header-photo hidden" src="" alt="">
+            <h1 id="valentineTitle"></h1>
+        </div>
         
         <!-- Music Player -->
         <div id="musicControls" class="music-controls">
-            <button id="musicToggle" class="music-btn">🎵 Play Music</button>
+            <button id="musicToggle" class="music-btn">🎵 Musica!</button>
             <audio id="bgMusic" loop>
                 <source id="musicSource" type="audio/mpeg">
                 Your browser does not support the audio element.
@@ -66,6 +70,24 @@
             <h2 id="celebrationTitle"></h2>
             <p class="celebration-text" id="celebrationMessage"></p>
             <p class="celebration-text" id="celebrationEmojis"></p>
+
+            <!-- Love Letter (hidden if empty in config) -->
+            <div class="love-letter hidden" id="loveLetter">
+                <p id="loveLetterText"></p>
+            </div>
+
+            <!-- Photo Gallery (hidden if no photos in config) -->
+            <div class="photo-gallery hidden" id="photoGallery">
+                <!-- Photos will be added here by JavaScript -->
+            </div>
+
+            <!-- Relationship Timeline (hidden if disabled in config) -->
+            <div class="timeline hidden" id="timeline">
+                <div class="timeline-line"></div>
+                <div class="timeline-milestones" id="timelineMilestones">
+                    <!-- Milestones will be added here by JavaScript -->
+                </div>
+            </div>
         </div>
     </div>
 
