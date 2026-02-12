@@ -114,9 +114,11 @@ function createFloatingElements() {
         container.appendChild(div);
     });
 
-    // Create floating images
+    // Create floating images (pick 5 random ones to keep it clean)
     if (config.floatingImages && config.floatingImages.length > 0) {
-        config.floatingImages.forEach(src => {
+        const shuffled = [...config.floatingImages].sort(() => 0.5 - Math.random());
+        const selected = shuffled.slice(0, 5);
+        selected.forEach(src => {
             const img = document.createElement('img');
             img.className = 'floating-image';
             img.src = src;
@@ -285,7 +287,7 @@ function celebrate() {
 
 // Create heart explosion animation
 function createHeartExplosion() {
-    for (let i = 0; i < 50; i++) {
+    for (let i = 0; i < 20; i++) {
         const heart = document.createElement('div');
         const randomHeart = config.floatingEmojis.hearts[Math.floor(Math.random() * config.floatingEmojis.hearts.length)];
         heart.innerHTML = randomHeart;

@@ -17,8 +17,8 @@ const CONFIG = {
     // Floating emojis that appear in the background
     // Find more emojis at: https://emojipedia.org
     floatingEmojis: {
-        hearts: ['❤️', '💖', '💝', '💗', '💓'],  // Heart emojis
-        bears: ['🧸', '🐻']                       // Cute bear emojis
+        hearts: ['❤️', '💖', '💝'],  // Heart emojis
+        bears: ['🧸']                // Cute bear emoji
     },
 
     // Floating photos in the background (circular, float alongside emojis)
@@ -36,7 +36,10 @@ const CONFIG = {
         "https://res.cloudinary.com/dvyf0lct6/image/upload/v1770857884/poseMiyeEmini_lxj6jr.jpg",
         "https://res.cloudinary.com/dvyf0lct6/image/upload/v1770857883/ratoncita_czvwyz.jpg",
         "https://res.cloudinary.com/dvyf0lct6/image/upload/v1770857884/us_wz7cyx.jpg",
-        "https://res.cloudinary.com/dvyf0lct6/image/upload/v1770857884/us1_czjqhz.jpg"
+        "https://res.cloudinary.com/dvyf0lct6/image/upload/v1770857884/us1_czjqhz.jpg",
+        "https://res.cloudinary.com/dvyf0lct6/image/upload/v1770859638/cine_oycozz.jpg",
+        "https://res.cloudinary.com/dvyf0lct6/image/upload/v1770859639/golpe2_njom6s.jpg",
+        "https://res.cloudinary.com/dvyf0lct6/image/upload/v1770859639/golpe_yypmmi.jpg"
 
 
 
@@ -67,16 +70,16 @@ const CONFIG = {
     // Love meter messages
     // They show up depending on how far they slide the meter
     loveMessages: {
-        extreme: "WOWOWOWOWOW tanto me amas?? 🥰🚀💝",  // Shows when they go past 5000%
-        high: "Al infinito y mas allá! 🚀💝",              // Shows when they go past 1000%
-        normal: "OIEIAMIE Un poco mas allá! 🥰"                           // Shows when they go past 100%
+        extreme: "WOWOWOWOWOW tanto me amas?? 🥰",    // Shows when they go past 5000%
+        high: "Al infinito y mas allá! 🚀",                // Shows when they go past 1000%
+        normal: "OIEIAMIE Un poco mas allá! 🥰"            // Shows when they go past 100%
     },
 
     // Messages that appear after they say "Yes!"
     celebration: {
-        title: "Que alegría! Soy el mas hombre feliz del mundo! 🎉💝💖💝💓",
+        title: "Que alegría! Soy el hombre mas feliz del mundo! 🎉",
         message: "Ahora para tu regalo, un abrazote y un besote! y mas sorpresas el sabadote",
-        emojis: "🎁💖🤗💝❤️💕",  // These will bounce around
+        emojis: "💖❤️💕",  // These will bounce around
 
         // Featured image — a big photo shown in the celebration screen
         // Leave empty "" to hide
