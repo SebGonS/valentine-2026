@@ -114,10 +114,10 @@ function createFloatingElements() {
         container.appendChild(div);
     });
 
-    // Create floating images (pick 5 random ones to keep it clean)
+    // Create floating images (pick 8 random ones to keep it clean)
     if (config.floatingImages && config.floatingImages.length > 0) {
         const shuffled = [...config.floatingImages].sort(() => 0.5 - Math.random());
-        const selected = shuffled.slice(0, 5);
+        const selected = shuffled.slice(0, 8);
         selected.forEach(src => {
             const img = document.createElement('img');
             img.className = 'floating-image';
@@ -131,7 +131,7 @@ function createFloatingElements() {
 
 // Set random position for floating elements
 function setRandomPosition(element) {
-    element.style.left = Math.random() * 100 + 'vw';
+    element.style.left = (Math.random() * 85 + 5) + 'vw'; // 5-90vw to stay in bounds
     element.style.animationDelay = Math.random() * 5 + 's';
     element.style.animationDuration = 10 + Math.random() * 20 + 's';
 }

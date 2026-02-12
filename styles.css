@@ -77,8 +77,11 @@ body {
     0% {
         transform: translateY(100vh) translateX(0);
     }
+    50% {
+        transform: translateY(50vh) translateX(var(--float-distance));
+    }
     100% {
-        transform: translateY(-100px) translateX(var(--float-distance));
+        transform: translateY(-100px) translateX(0);
     }
 }
 

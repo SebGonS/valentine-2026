@@ -17,8 +17,8 @@ const CONFIG = {
     // Floating emojis that appear in the background
     // Find more emojis at: https://emojipedia.org
     floatingEmojis: {
-        hearts: ['❤️', '💖', '💝'],  // Heart emojis
-        bears: ['🧸']                // Cute bear emoji
+        hearts: ['❤️'],  // Heart emoji
+        bears: []         // None — photos are the focus
     },
 
     // Floating photos in the background (circular, float alongside emojis)
@@ -71,8 +71,8 @@ const CONFIG = {
     // They show up depending on how far they slide the meter
     loveMessages: {
         extreme: "WOWOWOWOWOW tanto me amas?? 🥰",    // Shows when they go past 5000%
-        high: "Al infinito y mas allá! 🚀",                // Shows when they go past 1000%
-        normal: "OIEIAMIE Un poco mas allá! 🥰"            // Shows when they go past 100%
+        high: "ALA BESTIA! 🚀",                // Shows when they go past 1000%
+        normal: "OIEIAMIE Un poco mas allá! "            // Shows when they go past 100%
     },
 
     // Messages that appear after they say "Yes!"
